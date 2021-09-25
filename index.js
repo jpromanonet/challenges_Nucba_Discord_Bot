@@ -1,74 +1,41 @@
-const { Client, RichEmbed } = require('discord.js');
+const fs = require('fs');                   // Loads the Filesystem library
+const Discord = require('discord.js');      // Loads the discord API library
+const Config = require('./config.json');    // Loads the configuration values
+const BotLib = require('./lib/bot.js');
 
-const client = new Client();
+// Loads our dispatcher classes that figure out what handlers to use in response to events
+const Keywords = require('./dispatchers/keywordDispatch');
+const Commands = require('./dispatchers/commandDispatch');
 
+const client = new Discord.Client(); // Initiates the client
+client.botConfig = Config; // Stores the config inside the client object so it's auto injected wherever we use the client
+client.botConfig.rootDir = __dirname; // Stores the running directory in the config so we don't have to traverse up directories.
+
+// Loads our handler functions that do all the work
+BotLib.loadHandlers(client, 'commands');
+BotLib.loadHandlers(client, 'keywords');
+
+const cooldowns = new Discord.Collection(); // Creates an empty list for storing timeouts so people can't spam with commands
+
+// Starts the bot and makes it begin listening to events.
 client.on('ready', () => {
-    console.log('Bot Now connected!');
-    console.log('Logged In as', client.user.tag)
-    client.user.setStatus('online'); // online, idle, invisible, dnd
-
-    console.log('Bot status: ', client.user.presence.status);
-
-    // Bot sending a Message to a text channel called test
-    const testChannel = client.channels.find(x => x.name === 'challenges')
-    console.log(testChannel)
-    // client.channels.find(c => c.name === 'test').send('Hello Server!')
-
+    console.log('Bot Online');
 });
 
-// Bot listenning messages
-client.on('message', msg => {
-    console.log(msg.content)
-    if (msg.content === '!ping') {
-        msg.reply('Pong!')
+// Handle user messages
+client.on('message', message => {
+    // Check for keywords that don't use a real command structure
+    if(Keywords.handle(client, message)) {
+        return; // If we handled a keyword, don't continue to handle events for the same message
     }
 
-    if (msg.content === '!Ania') {
-        msg.reply('¿Quisiste decir diosa del codigo?')
+    // Check for structured commands
+    if(Commands.handle(client, message, cooldowns)) {
+        return; // If we handled a command, don't continue to handle events for the same message
     }
-
-    if (msg.content === 'hello') {
-        msg.channel.send(`Hola! ${msg.author}`);
-    }
-
-    if (msg.content.includes('!test')) {
-        msg.channel.send('Alla la estan probando! - by - "Daniel Llano"');
-    }
-
-    if (msg.content === '!nucba') {
-        msg.channel.send('https://nucba.com.ar/');
-        msg.channel.send('https://www.youtube.com/channel/UC9yQdGlpksaB7MtN2nibFMw');
-    }
-
-    if (msg.content === '!pretty') {
-        const embed = new RichEmbed()
-            // .setTitle('A pretty message')
-            // .setColor(0xFF0000)
-            // .setDescription('Hello', msg.author);
-            .addField('Something One', 'Some content', true)
-            .addField('Something Two', 'Some content Two', true)
-            .addField('Something Three', 'Some content Three', false)
-            .setAuthor('JPR', '');
-        msg.channel.send(embed);
-    }
-
-    // Deleting 100 messages
-    /*if (msg.content.startsWith('!clean')) {
-        async function clear() {
-            try {
-                // await msg.delete();
-                const fetched = await msg.channel.fetchMessages({limit: 99});
-                msg.channel.bulkDelete(fetched);;
-                console.log('Messages deleted');
-            }
-            catch (e) {
-                console.log(e);
-            }
-        }
-        clear();
-    }*/
 });
 
-
-const token = 'ODkxNDIxMjUxOTkyNjgyNTc2.YU-GvA.B-lQswpDstXP58VmBcxoxKl257U';
-client.login(token);
+// Log the bot in using the token provided in the config file
+client.login(client.botConfig.token).catch((err) => {
+    console.log(`Failed to authenticate with Discord network: "${err.message}"`);
+});
