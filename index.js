@@ -5,12 +5,12 @@ const client = new Client();
 client.on('ready', () => {
     console.log('Bot Now connected!');
     console.log('Logged In as', client.user.tag)
-    client.user.setStatus('dnd'); // online, idle, invisible, dnd
+    client.user.setStatus('online'); // online, idle, invisible, dnd
 
     console.log('Bot status: ', client.user.presence.status);
 
     // Bot sending a Message to a text channel called test
-    const testChannel = client.channels.find(x => x.name === 'test')
+    const testChannel = client.channels.find(x => x.name === 'challenges')
     console.log(testChannel)
     // client.channels.find(c => c.name === 'test').send('Hello Server!')
 
@@ -19,21 +19,25 @@ client.on('ready', () => {
 // Bot listenning messages
 client.on('message', msg => {
     console.log(msg.content)
-    if (msg.content === 'ping') {
-        msg.reply('pong')
+    if (msg.content === '!ping') {
+        msg.reply('Pong!')
+    }
+
+    if (msg.content === '!Ania') {
+        msg.reply('¿Quisiste decir diosa del codigo?')
     }
 
     if (msg.content === 'hello') {
-        msg.channel.send(`Hello ${msg.author}`);
+        msg.channel.send(`Hola! ${msg.author}`);
     }
 
     if (msg.content.includes('!test')) {
-        msg.channel.send('Glad you are testing');
+        msg.channel.send('Alla la estan probando! - by - "Daniel Llano"');
     }
 
-    if (msg.content === '!fazt') {
-        msg.channel.send('https://youtube.com/fazttech');
-        msg.channel.send('https://youtube.com/faztcode');
+    if (msg.content === '!nucba') {
+        msg.channel.send('https://nucba.com.ar/');
+        msg.channel.send('https://www.youtube.com/channel/UC9yQdGlpksaB7MtN2nibFMw');
     }
 
     if (msg.content === '!pretty') {
@@ -44,12 +48,12 @@ client.on('message', msg => {
             .addField('Something One', 'Some content', true)
             .addField('Something Two', 'Some content Two', true)
             .addField('Something Three', 'Some content Three', false)
-            .setAuthor('Fazt', 'https://pngimage.net/wp-content/uploads/2018/05/code-logo-png-4.png');
+            .setAuthor('JPR', '');
         msg.channel.send(embed);
     }
 
     // Deleting 100 messages
-    if (msg.content.startsWith('!clean')) {
+    /*if (msg.content.startsWith('!clean')) {
         async function clear() {
             try {
                 // await msg.delete();
@@ -62,9 +66,9 @@ client.on('message', msg => {
             }
         }
         clear();
-    }
+    }*/
 });
 
 
-const token = 'NTM5ODYzMTAxOTUzMDE1ODEz.DzIiXQ.abZZlw_vs1zkKQ4qEMEpZUgAno4';
+const token = 'ODkxNDIxMjUxOTkyNjgyNTc2.YU-GvA.B-lQswpDstXP58VmBcxoxKl257U';
 client.login(token);
