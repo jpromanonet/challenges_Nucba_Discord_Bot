@@ -24,7 +24,7 @@
             return(days)
         }
 
-        var startDate = "Sep 01, 2021 00:00:00"
+        var startDate = "Sep 27, 2021 00:00:00"
         var currentDay = countUpFromTime(startDate, 'countup1');
         var challengeDay = "Han pasado: " + currentDay + " dias desde que comenzo el desafio #100DaysOfCode de Nucba, el dia " + startDate;
 

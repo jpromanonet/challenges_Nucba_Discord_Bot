@@ -10,10 +10,10 @@
     execute(message, args) {
 
         // List of phrases to respond with
-        var phrases = [
+        var test = [
             'Alla la estan testeando - By - Daniela Llano',
         ];
 
-        return message.reply(phrases); // Replies to the user with a random phrase
+        return message.reply(test); // Replies to the user with a random phrase
     },
 };
