@@ -1,13 +1,11 @@
 /**
- * This class responds to anyone that types !bot talk and chooses one of the phrases below to respond with at random.
- *
+ * This class responds to anyone that types "LAHEE" or any of the aliases listed below with the gif defined below.
  */
  module.exports = {
-    name: 'desafio', // The name of the command
-    description: 'Contando en que dia del desafio estamos', // The description of the command (for help text)
-    args: false, // Specified that this command doesn't need any data other than the command
-    usage: '', // Help text to explain how to use the command (if it had any arguments)
-    execute(message, args) {
+    name: 'Challenge', // The name of the keyword to react to,
+    aliases: ['100DaysOfCode', 'NucbaDesafio', 'nucbadesafio', 'Nucbadesafio', "desafio", "challenges", "Desafio", "Challenges", "Desafios", "challenge"], // Other keywords to react to
+
+    execute(message) {
 
         // Calculate the days since the start of the challenge
         function countUpFromTime(countFrom, id) {
@@ -30,6 +28,7 @@
         var currentDay = countUpFromTime(startDate, 'countup1');
         var challengeDay = "Han pasado: " + currentDay + " dias desde que comenzo el desafio #100DaysOfCode de Nucba, el dia " + startDate;
 
-        return message.reply(challengeDay); // Replies to the user with a random phrase
+        // Now we send Ania's info to the channel
+        return message.channel.send(challengeDay);
     },
 };
