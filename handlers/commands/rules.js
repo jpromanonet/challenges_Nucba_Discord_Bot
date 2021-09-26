@@ -11,11 +11,22 @@
 
         // List of phrases to respond with
         var phrases = [
-            'Buenas buenas!',
+            '¡Buenas buenas!, estas son las reglas del desafio de codigo actual',
             '',
             'El desafio actual es el clasico "100DaysOfCode", el cual consiste en codear por 1 hora diaria durante 100 dias seguidos y pushear a nuestra cuenta de Github =)',
             '',
-            'Las reglas son las siguientes: '
+            '---------------',
+            '',
+            'Las reglas son las siguientes: ',
+            '',
+            '1. Codear al menos 1 hora por día, todos los dias, sin interrupciones por 100 dias seguidos.',
+            '2. Si tenes twitter, podes publicar todos los dias utilizando el hashtag #100DaysOfCode',
+            '3. Divertite e intenta compartir el desafio con 2 personas mas (si no se suman, no pasa nada)',
+            '',
+            '---------------',
+            '',
+            'Para mas info, podes visitar el sitio web oficial del desafio: ',
+            'https://www.100daysofcode.com/'
         ];
 
         return message.reply(phrases); // Replies to the user with a random phrase
