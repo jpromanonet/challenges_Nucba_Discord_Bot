@@ -14,7 +14,11 @@
             'Allá le estan tirando el comando',
             'Allá la estan comandando(?',
             'Allá la estan entreteniendo mientras codeas',
-            'Allá le estan haciendo el challenge'
+            'Allá le estan haciendo el challenge',
+            'Allá le estan haciendo el back',
+            'Allá le estan haciendo el backend',
+            'Allá la estan conociendo',
+            'Allá la estan vacunando'
         ];
 
         return message.reply(phrases[Math.floor(Math.random()*phrases.length)]); // Replies to the user with a random phrase
