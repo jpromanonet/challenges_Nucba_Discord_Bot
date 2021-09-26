@@ -18,6 +18,7 @@ module.exports = {
             data.push('Aca hay una lista de todos mis comandos: \n');
             data.push(commands.map(command => command.name).join('\n'));
             data.push(`\nPodes enviar \`${prefix}help [comando]\` para obtener información espefica de un comando!`);
+            data.push("https://c.tenor.com/FAxPcX5SoIoAAAAd/lets-get-going-ania-kubow.gif");
 
             return message.author.send(data, { split: true })
                 .then(() => {

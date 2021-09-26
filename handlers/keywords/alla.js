@@ -16,7 +16,8 @@
             'Allá le estan haciendo el backend',
             'Allá la estan conociendo',
             'Allá la estan vacunando',
-            'Allá la estan tirando'
+            'Allá la estan tirando',
+            'Allá le estan diciendo que sí'
         ];
 
         return message.channel.send(phrases[Math.floor(Math.random()*phrases.length)]);
