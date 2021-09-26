@@ -27,7 +27,7 @@
             '',
             'Para mas info, podes visitar el sitio web oficial del desafio: ',
             'https://www.100daysofcode.com/',
-            'https://cdn.discordapp.com/attachments/891131523468771408/891582820215054346/unknown.png'
+            'https://cdn.discordapp.com/attachments/891131523468771408/891584820952576020/placanucba_1.png'
         ];
 
         return message.reply(phrases); // Replies to the user with a random phrase
