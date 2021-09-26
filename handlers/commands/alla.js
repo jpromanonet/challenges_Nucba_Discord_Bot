@@ -18,7 +18,8 @@
             'Allá le estan haciendo el back',
             'Allá le estan haciendo el backend',
             'Allá la estan conociendo',
-            'Allá la estan vacunando'
+            'Allá la estan vacunando',
+            'Allá la estan tirando'
         ];
 
         return message.reply(phrases[Math.floor(Math.random()*phrases.length)]); // Replies to the user with a random phrase
