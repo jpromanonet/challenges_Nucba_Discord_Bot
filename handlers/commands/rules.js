@@ -13,20 +13,21 @@
         var phrases = [
             '¡Buenas buenas!, estas son las reglas del desafio de codigo actual',
             '',
-            'El desafio actual es el clasico "100DaysOfCode", el cual consiste en codear por 1 hora diaria durante 100 dias seguidos y pushear a nuestra cuenta de Github =)',
+            'El desafio actual es el clasico **"100DaysOfCode"**, el cual consiste en codear por 1 hora diaria durante 100 dias seguidos y pushear a nuestra cuenta de Github =)',
             '',
-            '---------------',
+            '________________________________________________',
             '',
-            'Las reglas son las siguientes: ',
+            '**Las reglas son las siguientes**: ',
             '',
             '1. Codear al menos 1 hora por día, todos los dias, sin interrupciones por 100 dias seguidos.',
             '2. Si tenes twitter, podes publicar todos los dias utilizando el hashtag #100DaysOfCode',
             '3. Divertite e intenta compartir el desafio con 2 personas mas (si no se suman, no pasa nada)',
             '',
-            '---------------',
+            '________________________________________________',
             '',
             'Para mas info, podes visitar el sitio web oficial del desafio: ',
             'https://www.100daysofcode.com/',
+            '',
             'https://cdn.discordapp.com/attachments/891131523468771408/891584820952576020/placanucba_1.png'
         ];
 
