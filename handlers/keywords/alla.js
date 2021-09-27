@@ -3,7 +3,7 @@
  */
  module.exports = {
     name: 'alla', // The name of the keyword to react to,
-    aliases: ['Alla'], // Other keywords to react to
+    aliases: ['Alla', 'ALLA', 'Allá'], // Other keywords to react to
 
     execute(message) {
 
@@ -17,7 +17,13 @@
             'Allá la estan conociendo',
             'Allá la estan vacunando',
             'Allá la estan tirando',
-            'Allá le estan diciendo que sí'
+            'Allá le estan diciendo que sí',
+            'Allá la estan clavando',
+            'Allá la estan mentoreando pedagógicamente',
+            'Allá se la estan ganando',
+            'Allá le estan atendiendo',
+            'Allá la estan traduciendo',
+            'Allá la estan haciendo malviajar'
         ];
 
         return message.channel.send(phrases[Math.floor(Math.random()*phrases.length)]);
