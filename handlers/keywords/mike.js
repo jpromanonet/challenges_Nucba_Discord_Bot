@@ -2,8 +2,8 @@
  * This class responds to anyone that types "LAHEE" or any of the aliases listed below with the gif defined below.
  */
  module.exports = {
-    name: 'Ania', // The name of the keyword to react to,
-    aliases: ['ania','kubow','Kubow','kubonia'], // Other keywords to react to
+    name: 'Mike', // The name of the keyword to react to,
+    aliases: ['scott','Scott','SCOTT','MIKE', 'Mike', 'Office', 'Halpert', 'Dwight','Schrute'], // Other keywords to react to
 
     execute(message) {
 
