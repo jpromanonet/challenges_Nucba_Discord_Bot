@@ -24,7 +24,16 @@
             'Allá le estan atendiendo',
             'Allá la estan traduciendo',
             'Allá la estan haciendo malviajar',
-            'Allá la estan batiendo'
+            'Allá la estan batiendo',
+            'Allá se la estan comiendo',
+            'Allá le estan abriendo la tapuer',
+            'Allá la estan insertando',
+            'Alla la estan consintiendo',
+            'Alla la estan depositando',
+            'Allá la estan poniendo la cuota al dia',
+            'Allá la estan pusheando',
+            'Allá la estan apretando',
+            'Allá la tienen sensible'
         ];
 
         return message.channel.send(phrases[Math.floor(Math.random()*phrases.length)]);
