@@ -3,7 +3,7 @@
  */
  module.exports = {
     name: 'Mike', // The name of the keyword to react to,
-    aliases: ['scott','Scott','SCOTT','MIKE', 'Mike', 'Office', 'Halpert', 'Dwight','Schrute'], // Other keywords to react to
+    aliases: ['scott','Scott','SCOTT','MIKE', 'mike', 'Office', 'Halpert', 'Dwight','Schrute'], // Other keywords to react to
 
     execute(message) {
 

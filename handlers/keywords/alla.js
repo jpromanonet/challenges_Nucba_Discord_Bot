@@ -33,7 +33,26 @@
             'Allá la estan poniendo la cuota al dia',
             'Allá la estan pusheando',
             'Allá la estan apretando',
-            'Allá la tienen sensible'
+            'Allá la tienen sensible',
+            'Allá la estan bailando sabroso',
+            'Allá la estan calentando', 
+            'Allá le estan clavando la banana',
+            'Allá le estan ocupado la boca',
+            'Alla la estan haciendo tragar',
+            'Allá la estan ensuciando',
+            'Allá la estan haciendo',
+            'Alla le estan entrando al bambu',
+            'Alla le estan haciendo bullying en la chakra',
+            'Alla le estan abriendo los chakras',
+            'Allá la estan toxiqueando',
+            'Allá le estan chequeando el bot',
+            'Allá la estan madrugando',
+            'Allá la estan serruchando',
+            'Allá se la estan dando dura',
+            'Alla la estan compartiendo',
+            'Alla le estan comiendo el kitkat',
+            'Allá la estan maratoneando',
+            'Allá le estan haciendo los ppt'
         ];
 
         return message.channel.send(phrases[Math.floor(Math.random()*phrases.length)]);
