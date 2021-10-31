@@ -52,7 +52,14 @@
             'Alla la estan compartiendo',
             'Alla le estan comiendo el kitkat',
             'Allá la estan maratoneando',
-            'Allá le estan haciendo los ppt'
+            'Allá le estan haciendo los ppt',
+            'Allá la estan profundizando',
+            'Allá le estan metiendo mano', 
+            'Allá la estan soplando',
+            'Allá la estan llenando',
+            'Allá la tienen profunda',
+            'Allá la estan aplaudiendo',
+            'Allá le estan dando duro y parejo'
         ];
 
         return message.channel.send(phrases[Math.floor(Math.random()*phrases.length)]);
